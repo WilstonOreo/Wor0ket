@@ -1,6 +1,6 @@
 
 wor0ket:
-		gcc -o wor0ket -O3 wor0ket.c -lm -lglut -lGL
+		gcc -o wor0ket -Os wor0ket.c -lm -lglut -lGL
 
 .PHONY : clean
  	clean :
