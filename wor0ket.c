@@ -17,8 +17,8 @@
 #include <stdio.h>
 #include <GL/freeglut.h>
 
-#define XSIZE 96
-#define YSIZE 70
+#define XSIZE 96 
+#define YSIZE 68
 #define SCALE 4
 
 typedef unsigned char u8;
@@ -207,8 +207,8 @@ u8 checkerBoard(int t, int x, int z)
 	if (abs(z) > 65536*128) return 0;
 
 	int pX = posX,pY = posY;
-	int xC = ((x*48 >> 8) + dir*pX) >> 16;
-	int zC = ((z*48 >> 8) - dir*pY) >> 16;
+	int xC = ((x*96 >> 8) + dir*pX) >> 16;
+	int zC = ((z*96 >> 8) - dir*pY) >> 16;
 	int checker = ((u8)xC & 1) ^ ((u8)zC & 1);
 
 	int dist = intsqrt((x >> 12)*(x >> 12)+ (z >> 12)*(z >> 12))/4-32;
@@ -433,7 +433,7 @@ void display( )
 	glClear(GL_COLOR_BUFFER_BIT);
 
 	drawScene1();
-//	drawScene2();
+ 	//drawScene2();
 	dither();
 
 	int x,y;
